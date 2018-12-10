@@ -39,7 +39,7 @@ public class DetailMovieActivity extends AppCompatActivity implements DetailMovi
 
         ButterKnife.bind(this);
         movie = (Result)getIntent().getSerializableExtra(EXTRA_MOVIE);
-        DetailMoviePresenter = new DetailMoviePresenter(new DetailMovieInteractor(new MovieClient()));
+        DetailMoviePresenter = new DetailMoviePresenter();
         DetailMoviePresenter.setView(this);
         DetailMoviePresenter.getMovieId(movie.getId());
     }

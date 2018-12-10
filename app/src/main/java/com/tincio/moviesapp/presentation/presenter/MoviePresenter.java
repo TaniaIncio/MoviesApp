@@ -2,6 +2,7 @@
 package com.tincio.moviesapp.presentation.presenter;
 
 import com.tincio.moviesapp.data.api.Constants;
+import com.tincio.moviesapp.data.api.client.MovieClient;
 import com.tincio.moviesapp.data.model.Result;
 import com.tincio.moviesapp.domain.interactor.MovieInteractor;
 
@@ -13,8 +14,8 @@ public class MoviePresenter extends Presenter<MoviePresenter.View> {
 
   private MovieInteractor interactor;
 
-  public MoviePresenter(MovieInteractor interactor) {
-    this.interactor = interactor;
+  public MoviePresenter() {
+    this.interactor = new MovieInteractor(new MovieClient());
   }
 
   public void onSearchMovie(String name) {

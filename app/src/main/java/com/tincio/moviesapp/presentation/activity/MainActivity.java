@@ -19,9 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.tincio.moviesapp.R;
-import com.tincio.moviesapp.data.api.client.MovieClient;
 import com.tincio.moviesapp.data.model.Result;
-import com.tincio.moviesapp.domain.interactor.MovieInteractor;
 import com.tincio.moviesapp.presentation.adapter.ResultsAdapter;
 import com.tincio.moviesapp.presentation.presenter.MoviePresenter;
 
@@ -46,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements MoviePresenter.Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        moviePresenter = new MoviePresenter(new MovieInteractor(new MovieClient()));
+        moviePresenter = new MoviePresenter();
         moviePresenter.setView(this);
         moviePresenter.getMovies();
         //  setHasOptionsMenu(true);

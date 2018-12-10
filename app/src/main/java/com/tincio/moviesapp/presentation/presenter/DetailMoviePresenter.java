@@ -2,6 +2,7 @@
 package com.tincio.moviesapp.presentation.presenter;
 
 import com.tincio.moviesapp.data.api.Constants;
+import com.tincio.moviesapp.data.api.client.MovieClient;
 import com.tincio.moviesapp.data.model.Response;
 import com.tincio.moviesapp.domain.interactor.DetailMovieInteractor;
 
@@ -11,8 +12,8 @@ public class DetailMoviePresenter extends Presenter<DetailMoviePresenter.View> {
 
   private DetailMovieInteractor interactor;
 
-  public DetailMoviePresenter(DetailMovieInteractor interactor) {
-    this.interactor = interactor;
+  public DetailMoviePresenter() {
+    interactor  = new DetailMovieInteractor(new MovieClient());
   }
 
 
