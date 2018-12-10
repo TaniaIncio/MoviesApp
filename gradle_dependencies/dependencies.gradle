@@ -1,0 +1,77 @@
+ext {
+
+    /**Version*/
+    supportVersion = '28.0.0'
+    constraintlayoutVersion = '1.+'
+    retrofitVersion = '2.4.0'
+    picassoVersion = '2.5.2'
+    rxandroidVersion = '2.0.2'
+    rxjavaVersion = '2.1.7'
+    butterknifeVersion = '8.8.1'
+
+    junitVersion = '4.12'
+    mockitoVersion = '1.10.19'
+    robolectricVersion = '3.0'
+
+
+    /**Names package**/
+
+    supportPackage = 'com.android.support'
+    constraintlayoutPackage = 'com.android.support.constraint'
+    junitPackage = 'junit'
+    mockitoPackage = 'org.mockito'
+    robolectricPackage = 'org.robolectric'
+    retrofitPackage = 'com.squareup.retrofit2'
+    rxJavaPackage = 'com.squareup.retrofit2'
+    picassoPackage = 'com.squareup.picasso'
+    jakeWhartonPackage = 'com.jakewharton'
+    playservicePackage = 'com.google.android.gms'
+    reactivePackage = 'io.reactivex.rxjava2'
+
+
+
+    /**Dependencies**/
+
+    supportDependencies = [
+
+            design      : buildDependency(supportPackage, 'design', supportVersion),
+            appcompat   : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+            cardview    : buildDependency(supportPackage, 'cardview-v7', supportVersion),
+            recyclerview: buildDependency(supportPackage, 'recyclerview-v7', supportVersion),
+            constraint_layout: buildDependency(constraintlayoutPackage, 'constraint-layout', constraintlayoutVersion)
+
+    ]
+    
+    squareDependencies = [
+
+            retrofit       : buildDependency(retrofitPackage, 'retrofit', retrofitVersion),
+            adapter_rx_java: buildDependency(rxJavaPackage, 'adapter-rxjava2', retrofitVersion),
+            converter_gson : buildDependency(retrofitPackage, 'converter-gson', retrofitVersion),
+            picasso        : buildDependency(picassoPackage, 'picasso', picassoVersion)
+    ]
+
+
+
+    reactiveDependencies = [
+            rxandroid: buildDependency(reactivePackage, 'rxandroid', rxandroidVersion),
+            rxjava   : buildDependency(reactivePackage, 'rxjava', rxjavaVersion)
+    ]
+
+
+
+    elementalDependencies = [
+            butterknife         : buildDependency(jakeWhartonPackage, 'butterknife', butterknifeVersion),
+            butterknifeProcessor: buildDependency(jakeWhartonPackage, 'butterknife-compiler', butterknifeVersion),
+    ]
+
+
+    testingDependencies = [
+            junit      : buildDependency(junitPackage, 'junit', junitVersion),
+            mockito    : buildDependency(mockitoPackage, 'mockito-core', mockitoVersion),
+            robolectric: buildDependency(robolectricPackage, 'robolectric', robolectricVersion)
+    ]
+}
+
+static String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.activity.MainActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/light_grey">
+
+            <LinearLayout
+                android:id="@+id/headerbar_movies"
+                style="@style/Theme.AppTheme.Movie.HeaderBar">
+                <include layout="@layout/toolbar" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_movies"
+                    style="@style/Theme.AppTheme.Movie.RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_movie" />
+
+                <ProgressBar
+                    android:id="@+id/pv_movies"
+                    style="@style/Theme.AppTheme.Movie.ProgressBar" />
+
+                <ImageView
+                    android:id="@+id/iv_movies"
+                    style="@style/Theme.AppTheme.Movie.ImageView" />
+
+                <TextView
+                    android:id="@+id/txt_line_movies"
+                    style="@style/Theme.AppTheme.Movie.TextView"
+                    android:text="@string/search_movie_hint"
+                    android:textSize="@dimen/size_title" />
+
+                <TextView
+                    android:id="@+id/txt_subline_movies"
+                    style="@style/Theme.AppTheme.Movie.TextView"
+                    android:text="@string/search_movie_hint"
+                    android:textSize="@dimen/size_subtitle" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

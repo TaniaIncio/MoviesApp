@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MoviesApp</string>
+
+
+    <!-- fragment_movie.xml -->
+    <string name="search_hint">Search Movie</string>
+    <string name="search_movie_hint">Search movies.</string>
+    <string name="label_overview">Overview</string>
+
+    <!-- Menu -->
+    <string name="action_search">Search</string>
+
+    <!-- exceptions -->
+    <string name="error_movie_not_found">Movie not found, please check that the name</string>
+    <string name="error_internet_connection">Please check your Internet connection!</string>
+</resources>

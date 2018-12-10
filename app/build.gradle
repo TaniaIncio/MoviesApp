@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.tincio.moviesapp"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation supportDependencies.design
+    implementation supportDependencies.appcompat
+    implementation supportDependencies.cardview
+    implementation supportDependencies.recyclerview
+    implementation supportDependencies.constraint_layout
+
+    implementation squareDependencies.retrofit
+    implementation squareDependencies.adapter_rx_java
+    implementation squareDependencies.converter_gson
+    implementation squareDependencies.picasso
+
+    implementation reactiveDependencies.rxandroid
+    implementation reactiveDependencies.rxjava
+
+    implementation elementalDependencies.butterknife
+    annotationProcessor elementalDependencies.butterknifeProcessor
+
+    testImplementation testingDependencies.junit
+    testImplementation testingDependencies.mockito
+    testImplementation testingDependencies.robolectric
+}
